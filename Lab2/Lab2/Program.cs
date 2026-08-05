@@ -17,7 +17,7 @@
                     break;
 
                 case '2':
-                    //Task2();
+                    Task2();
 
                     break;
 
@@ -35,6 +35,7 @@
 
                     break;
             }
+
             void Task1()
             {
                 char switch_Task1;
@@ -161,9 +162,9 @@
 
                                 Console.WriteLine($"Writing a int variable before entering a value: inta: {inta}, intb: {intb}, intc: {intc}.");
                                 Console.Write("Enter value inta in decimal form, intb in binary form and intc in hexadecimal form [-2147483648;2147483647] \n" +
-                                    "decimal form - 123, 4123, 124213 \n" +
-                                    "binary form - 0b101: \n" +
-                                    "hexadecimal form - 0xFF \n");
+                                                "decimal form - 123, 4123, 124213 \n" +
+                                                "binary form - 0b101: \n" +
+                                                "hexadecimal form - 0xFF \n");
 
                                 inta = Convert.ToInt32(Console.ReadLine());
                                 intb = Convert.ToInt32(Console.ReadLine(), 2);
@@ -183,9 +184,9 @@
 
                                 Console.WriteLine($"Writing a uint variable before entering a value: uinta: {uinta}, uintb: {uintb}, uintc: {uintc}.");
                                 Console.Write("Enter value uinta in decimal form, uinta in binary form and uinta in hexadecimal form [0;4294967295] \n" +
-                                    "decimal form - 123, 4123, 124213 \n" +
-                                    "binary form - 101: \n" +
-                                    "hexadecimal form - 0xFF \n");
+                                                "decimal form - 123, 4123, 124213 \n" +
+                                                "binary form - 101: \n" +
+                                                "hexadecimal form - 0xFF \n");
 
                                 uinta = Convert.ToUInt32(Console.ReadLine());
                                 uintb = Convert.ToUInt32(Console.ReadLine(), 2);
@@ -205,9 +206,9 @@
 
                                 Console.WriteLine($"Writing a long variable before entering a value: la: {la}, lb: {lb}, lc: {lc}.");
                                 Console.Write("Enter value la in decimal form, lb in binary form and lc in hexadecimal form [–9 223 372 036 854 775 808; 9 223 372 036 854 775 807] \n" +
-                                    "decimal form - 123, 4123, 124213 \n" +
-                                    "binary form - 101: \n" +
-                                    "hexadecimal form - 0xFF \n");
+                                                "decimal form - 123, 4123, 124213 \n" +
+                                                "binary form - 101: \n" +
+                                                "hexadecimal form - 0xFF \n");
 
                                 la = Convert.ToInt64(Console.ReadLine());
                                 lb = Convert.ToInt64(Console.ReadLine(), 2);
@@ -227,9 +228,9 @@
 
                                 Console.WriteLine($"Writing a ulong variable before entering a value: ula: {ula}, ulb: {ulb}, ulc: {ulc}.");
                                 Console.Write("Enter value ula in decimal form, ulb in binary form and ulc in hexadecimal form [0; 18 446 744 073 709 551 615] \n" +
-                                    "decimal form - 123, 4123, 124213 \n" +
-                                    "binary form - 101: \n" +
-                                    "hexadecimal form - 0xFF \n");
+                                                "decimal form - 123, 4123, 124213 \n" +
+                                                "binary form - 101: \n" +
+                                                "hexadecimal form - 0xFF \n");
 
                                 ula = Convert.ToUInt64(Console.ReadLine());
                                 ulb = Convert.ToUInt64(Console.ReadLine(), 2);
@@ -317,8 +318,8 @@
 
                                 Console.WriteLine($"Writing a ninta variable before entering a value: ninta: {ninta}.");
                                 Console.Write("Enter value ninta \n" +
-                                    "x64 - [-9223372036854775808; 9223372036854775807]\n" +
-                                    "x86 - [-2147483648; 2147483647]:\n");
+                                                "x64 - [-9223372036854775808; 9223372036854775807]\n" +
+                                                "x86 - [-2147483648; 2147483647]:\n");
 
                                 ninta = nint.Parse(Console.ReadLine());
 
@@ -340,8 +341,8 @@
 
                                 Console.WriteLine($"Writing a nuint variable before entering a value: nuinta: {nuinta}.");
                                 Console.Write("Enter value nuinta \n" +
-                                    "x64 - [-0; 18446744073709551615]\n" +
-                                    "x86 - [-0; 4294967295]:\n");
+                                                "x64 - [-0; 18446744073709551615]\n" +
+                                                "x86 - [-0; 4294967295]:\n");
 
                                 ninta = nint.Parse(Console.ReadLine());
 
@@ -362,8 +363,8 @@
                         char switch_Case_b;
 
                         Console.WriteLine("Select Conversions:\n" +
-                            "1 - Implicit Conversion\n" +
-                            "2 - Explicit Conversion\n");
+                                            "1 - Implicit Conversion\n" +
+                                            "2 - Explicit Conversion\n");
 
                         switch_Case_b = Convert.ToChar(Console.ReadLine());
                         switch (switch_Case_b)
@@ -376,60 +377,60 @@
 
                                 int smallNumber = 42;
                                 Console.WriteLine("Implicit Conversions:\n" +
-                                                "Safe Widening:\n" +
-                                                $"int smallNumber = {smallNumber}\n" +
-                                                $"smallNumber {smallNumber} = {smallNumber.GetType()}");
+                                                    "Safe Widening:\n" +
+                                                    $"int smallNumber = {smallNumber}\n" +
+                                                    $"smallNumber {smallNumber} = {smallNumber.GetType()}");
 
                                 long bigNumber = smallNumber;
                                 Console.WriteLine($"long bigNumber = smallNumber;\n" +
-                                                $"smallNumber {smallNumber} = {smallNumber.GetType()}\n" +
-                                                $"bigNumber {bigNumber} = {bigNumber.GetType()}\n" +
-                                                $"_______________________________________________");
+                                                    $"smallNumber {smallNumber} = {smallNumber.GetType()}\n" +
+                                                    $"bigNumber {bigNumber} = {bigNumber.GetType()}\n" +
+                                                    $"_______________________________________________");
 
                                 //Upcasting
 
                                 string text = "Hi!";
                                 Console.WriteLine("Upcasting:\n" +
-                                                $"string text = {text}\n" +
-                                                $"text {text} = {text.GetType()}");
+                                                    $"string text = {text}\n" +
+                                                    $"text {text} = {text.GetType()}");
 
                                 object obj = text;
                                 Console.WriteLine("object obj = text\n" +
-                                                $"string text = {text}\n" +
-                                                $"obj {obj} = {obj.GetType()}\n" +
-                                                $"_______________________________________________");
+                                                    $"string text = {text}\n" +
+                                                    $"obj {obj} = {obj.GetType()}\n" +
+                                                    $"_______________________________________________");
 
                                 //Literal Conversions
 
                                 byte safeByte = 150;
                                 Console.WriteLine("Literal Conversions:\n" +
-                                                $"byte safeByte = {safeByte};\n" +
-                                                $"safeByte: {safeByte.GetType()}\n" +
-                                                $"_______________________________________________");
+                                                    $"byte safeByte = {safeByte};\n" +
+                                                    $"safeByte: {safeByte.GetType()}\n" +
+                                                    $"_______________________________________________");
 
                                 //Nullable Conversions
                                 int normalValue = 42;
 
                                 Console.WriteLine("Nullable Conversions:\n" +
-                                                $"int normalValue = {normalValue};\n" +
-                                                $"normalValue: {normalValue.GetType()}\n");
+                                                    $"int normalValue = {normalValue};\n" +
+                                                    $"normalValue: {normalValue.GetType()}\n");
 
                                 int? nullableValue = null;
                                 Console.WriteLine("int? nullableValue = normalValue\n" +
-                                                $"normalValue = {normalValue.GetType()}\n" +
-                                                $"nullableValue = {nullableValue.HasValue}\n" +
-                                                $"_______________________________________________");
+                                                    $"normalValue = {normalValue.GetType()}\n" +
+                                                    $"nullableValue = {nullableValue.HasValue}\n" +
+                                                    $"_______________________________________________");
 
                                 //Tuple  Conversions
 
                                 (int id, string name) user = (1, "Иван");
                                 (double id, object name) looseUser = user;
                                 Console.WriteLine("Tuple  Conversions:\n" +
-                                                $"(int id, string name) user = (1, \"Иван\");\n" +
-                                                $"(double id, object name) looseUser = user;\n" +
-                                                $"(user.id: {user.id.GetType()}, user.name: {user.name.GetType()}\n" +
-                                                $"(looseUser.id: {looseUser.id.GetType()}, looseUser.name: {looseUser.name.GetType()}\n" +
-                                                $"_______________________________________________");
+                                                    $"(int id, string name) user = (1, \"Иван\");\n" +
+                                                    $"(double id, object name) looseUser = user;\n" +
+                                                    $"(user.id: {user.id.GetType()}, user.name: {user.name.GetType()}\n" +
+                                                    $"(looseUser.id: {looseUser.id.GetType()}, looseUser.name: {looseUser.name.GetType()}\n" +
+                                                    $"_______________________________________________");
 
                                 break;
 
@@ -441,22 +442,24 @@
 
                                 long bigValue = 300;
                                 Console.WriteLine($"Numeric Conversions:" +
-                                                $"convert long to byte\n" +
-                                                $"long bigValue = 300;\n" +
-                                                $"bigValue: {bigValue}, Type {bigValue.GetType()}\n");
+                                                    $"convert long to byte\n" +
+                                                    $"long bigValue = 300;\n" +
+                                                    $"bigValue: {bigValue}, Type {bigValue.GetType()}\n");
+
                                 byte smallValue = (byte)bigValue;
                                 Console.WriteLine($"byte smallValue = (byte)bigValue;\n" +
-                                                $"smallValue: {smallValue}, Type {smallValue.GetType()}\n");
+                                                    $"smallValue: {smallValue}, Type {smallValue.GetType()}\n");
 
 
                                 double pi = 3.14159;
                                 Console.WriteLine($"convert double to int\n" +
-                                                $"double pi = 3.14159;\n" +
-                                                $"pi: {pi}, Type {pi.GetType()}\n");
+                                                    $"double pi = 3.14159;\n" +
+                                                    $"pi: {pi}, Type {pi.GetType()}\n");
+
                                 int integerPi = (int)pi;
                                 Console.WriteLine($"int integerPi = (int)pi;\n" +
-                                                $"integerPi: {integerPi}, Type {integerPi.GetType()}\n" +
-                                                $"_______________________________________________");
+                                                    $"integerPi: {integerPi}, Type {integerPi.GetType()}\n" +
+                                                    $"_______________________________________________");
 
                                 //Nullable Conversions
 
@@ -466,12 +469,12 @@
                                 int? nullValue = null;
                                 //int brokenScore = (int)nullValue; 
                                 Console.WriteLine($"int? nullableScore = 99;\n" +
-                                                $"int regularScore = (int)nullableScore\n" +
-                                                $"its works because there is a number inside\n" +
-                                                $"int? nullValue = null;\n" +
-                                                $"int brokenScore = (int)nullValue;\n" +
-                                                $"if the variable was indeed null, an explicit cast will throw an InvalidOperationException.\n" +
-                                                $"_______________________________________________");
+                                                    $"int regularScore = (int)nullableScore\n" +
+                                                    $"its works because there is a number inside\n" +
+                                                    $"int? nullValue = null;\n" +
+                                                    $"int brokenScore = (int)nullValue;\n" +
+                                                    $"if the variable was indeed null, an explicit cast will throw an InvalidOperationException.\n" +
+                                                    $"_______________________________________________");
 
                                 //Tuple Conversions
 
@@ -479,11 +482,11 @@
                                 (int x, int y) intCoordinates = ((int)coordinates.x, (int)coordinates.y);
 
                                 Console.WriteLine("Tuple  Conversions:\n" +
-                                                $"(double x, double y) coordinates = (10.5, 20.9);\n" +
-                                                $"(int x, int y) intCoordinates = ((int)coordinates.x, (int)coordinates.y);\n" +
-                                                $"(coordinates.x: {coordinates.x.GetType()}, (coordinates.y: {coordinates.y.GetType()}\n" +
-                                                $"(intCoordinates.x: {intCoordinates.x.GetType()}, (intCoordinates.y: {intCoordinates.y.GetType()}\n" +
-                                                $"_______________________________________________");
+                                                    $"(double x, double y) coordinates = (10.5, 20.9);\n" +
+                                                    $"(int x, int y) intCoordinates = ((int)coordinates.x, (int)coordinates.y);\n" +
+                                                    $"(coordinates.x: {coordinates.x.GetType()}, (coordinates.y: {coordinates.y.GetType()}\n" +
+                                                    $"(intCoordinates.x: {intCoordinates.x.GetType()}, (intCoordinates.y: {intCoordinates.y.GetType()}\n" +
+                                                    $"_______________________________________________");
 
                                 break;
 
@@ -501,13 +504,13 @@
                         int number = 42;
                         object boxed = number;
                         Console.WriteLine("boxing:\n" +
-                                        "int number = 42;\n" +
-                                        "object boxed = number;\n");
+                                            "int number = 42;\n" +
+                                            "object boxed = number;\n");
 
                         int unboxed = (int)boxed;
 
                         Console.WriteLine("unboxing:\n" +
-                                        "int unboxed = (int)boxed;\n");
+                                            "int unboxed = (int)boxed;\n");
 
                         break;
 
@@ -518,11 +521,11 @@
                         var name = "Алексей";
                         var varPi = 3.14159;
                         Console.WriteLine($"var age = 25;\n" +
-                                        $"var name = \"Алексей\";\n" +
-                                        $"var varPi = 3.14159;\n" +
-                                        $"age: {age}, Type: {age.GetType()}\n" +
-                                        $"name: {name}, Type: {name.GetType()}\n" +
-                                        $"varPi: {varPi}, Type: {varPi.GetType()}");
+                                            $"var name = \"Алексей\";\n" +
+                                            $"var varPi = 3.14159;\n" +
+                                            $"age: {age}, Type: {age.GetType()}\n" +
+                                            $"name: {name}, Type: {name.GetType()}\n" +
+                                            $"varPi: {varPi}, Type: {varPi.GetType()}");
 
                         break;
                     case 'e':
@@ -531,8 +534,8 @@
 
                         int? val = null;
                         Console.WriteLine("work with Nullable variable\n" +
-                                        "int? val = null;\n" +
-                                        $"IsNull(val);");
+                                            "int? val = null;\n" +
+                                            $"IsNull(val);");
                         IsNull(val);
                         val = 22;
                         Console.WriteLine("IsNull(val);");
@@ -553,9 +556,9 @@
                         var integerVariable = 1;
                         //integerVariable = "qw";
                         Console.WriteLine("var integerVariable = 1;\r\n" +
-                                        "integerVariable = \"qw\";\n" +
-                                        "var determines the type at the first initialization, so reassigning " +
-                                        "a value of a different type to such a variable will cause an error.");
+                                            "integerVariable = \"qw\";\n" +
+                                            "var determines the type at the first initialization, so reassigning " +
+                                            "a value of a different type to such a variable will cause an error.");
 
                         break;
 
@@ -563,53 +566,111 @@
                         break;
 
                 }
-                void Task2()
-                {
-
-                }
-
-                void Task3()
-                {
-
-                }
-
-                void Task4()
-                {
-
-                }
-
-                //System.String
-                //string == (Type Handle == 8 byte + Sync Block Index == 8 byte + Length == 4 byte + symbols == (2 * N)byte(s) + \0 == 2 byte)
-
-                //string hello = "Hello";
-                //string word = "world";
-
-                //Console.WriteLine($"Writing a string variable before entering a value: hello: {hello}, word: {word}.");
-                //Console.WriteLine($"{hello} {word}.");
-                //Console.Write("Enter value string ('qwertyuioplkjhgfdsa1234455'): \n");
-
-                //hello = Console.ReadLine();
-                //word = Console.ReadLine();
-
-                //Console.WriteLine($"Writing a string variable after entering a value: hello: {hello}, word: {word}.");
-
-
-                ////System.Object
-                ////object === any type and it takes 4 bytes on a 32-bit platform and 8 bytes on a 64-bit platform
-
-                //object objecta = 22;
-                //object objectb = 3.14;
-                //object objectc = "hello code";
-
-                //Console.WriteLine($"Writing a object variable before entering a value: objecta: {objecta}, objectb: {objectb}, objectc: {objectc}.");
-                //Console.Write("Enter value object ('qwertyuioplkjhgfdsa1234455', 123, 3,3214): \n");
-
-                //objecta = Console.ReadLine();
-                //objectb = Console.ReadLine();
-                //objectc = Console.ReadLine();
-
-                //Console.WriteLine($"Writing a object variable after entering a value: objecta: {objecta}, objectb: {objectb}, objectc: {objectc}.");
             }
+
+            void Task2()
+            {
+                char switch_Task2;
+                Console.WriteLine("Select a task (a, b, c, d): \n");
+                switch_Task2 = Convert.ToChar(Console.ReadLine());
+
+                switch (switch_Task2)
+                {
+                    case 'a':
+                        //System.String
+                        //string == (Type Handle == 8 byte + Sync Block Index == 8 byte + Length == 4 byte + symbols == (2 * N)byte(s) + \0 == 2 byte)
+
+                        string hello = "Hello";
+                        string hello1 = "Hello";
+                        string word = "world";
+
+                        Console.WriteLine("string hello = \"Hello\";\n" +
+                                            "string hello1 = \"Hello\";\n" +
+                                            "string word = \"world\";\n" +
+                                            $"hello == hello1: {hello == hello1}\n" +
+                                            $"hello == word: {hello == word}\n" +
+                                            $"hello == hello1: {hello == hello1}");
+
+                        break;
+
+                    case 'b':
+                     
+                        string str1 = "Hello1";
+                        string str2 = "Hello2";
+                        string str3 = "Hello3";
+
+                        string Concate = str1 + str2;
+
+                        string original = "text";
+                        string copy = original; // Копирование ссылки (рекомендуемый способ)
+                        string deepCopy = (string)original.Clone(); // Создание дубликата объекта
+
+                        string sentence = "C# its a cool language";
+                        string[] words = sentence.Split(' ');
+
+
+                        Console.WriteLine("string str1 = \"Hello1\";\n" +
+                                            "string str2 = \"Hello2\";\n" +
+                                            "string str3 = \"Hello3\";\n" +
+                                            "_______________________________________________\n" +
+                                            $"Concatenation:\n" +
+                                            $"Concate = string.Concat(str1, str2): " +
+                                            $"{Concate = string.Concat(str1, str2)}\n" +
+                                            $"string Concate = str1 + str2;\n" +
+                                            $"str1 + str2 = {Concate}\n" +
+                                            "_______________________________________________\n" +
+                                            $"Copy:\n" +
+                                            $"string original = \"text\";\n" +
+                                            $"{original}\n" +
+                                            $"{copy.AsMemory()}\n" +
+                                            $"string copy = original; (copy link)\n" +
+                                            $"string deepCopy = (string)original.Clone(); (create duplicate object)\n" +
+                                            "_______________________________________________\n" +
+                                            $"Split:\n" +
+                                            $"string sentence = \"C# its a cool language\";\n" +
+                                            $"string[] words = sentence.Split(' ');\n");
+
+                        for (int i = 0; i < words.Length; i++)
+                        {
+                            Console.Write($"{words[i]}");
+                        }
+
+                        string baseText = "I lern";
+                        string updated = baseText.Insert(6, " C#");
+
+                        string source = "dad is dead";
+                        string clean1 = source.Remove(7, 4);
+
+                        Console.WriteLine("_______________________________________________\n" +
+                                            "Insert:\n" +
+                                            $"string baseText = \"I lern\";\n" +
+                                            $"string updated = baseText.Insert(6, \" C#\");\n" +
+                                            $"{updated}\n" +
+                                            "_______________________________________________\n" +
+                                            $"Remove:\n" +
+                                            $"string source = \"dad is dead\";\n" +
+                                            $"{source}\n" +
+                                            $"string clean1 = source.Remove(10, 6);\n" +
+                                            $"{clean1}\n");
+
+                        break;
+
+                    default:
+                        break;
+
+                }
+            }
+
+            void Task3()
+            {
+
+            }
+
+            void Task4()
+            {
+
+            }
+            
         }
     }
 }
