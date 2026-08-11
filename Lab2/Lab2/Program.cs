@@ -1,4 +1,6 @@
-﻿namespace Lab2
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace Lab2
 {
     internal class Program
     {
@@ -652,6 +654,28 @@
                                             $"{source}\n" +
                                             $"string clean1 = source.Remove(10, 6);\n" +
                                             $"{clean1}\n");
+
+                        break;
+
+                    case 'c':
+                        
+                        string nullStr = null;
+                        string notNullStr = "not null";
+                        string voidStr = "";
+                        Console.WriteLine($"IsNullOrEmpty\n" +
+                                            $"string nullStr = null;\n" +
+                                            $"string notNullStr = \"not null\";\n" +
+                                            $"string voidStr = \"\";");
+
+
+                        bool result;
+                        result = string.IsNullOrEmpty(nullStr);
+                        Console.WriteLine($"nullStr: {result}");
+                        result = string.IsNullOrEmpty(notNullStr);
+                        Console.WriteLine($"notNullStr: {result}");
+                        result = string.IsNullOrEmpty(voidStr);
+                        Console.WriteLine($"voidStr: {result}");
+
 
                         break;
 
