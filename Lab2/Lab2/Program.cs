@@ -667,7 +667,6 @@ namespace Lab2
                                             $"string notNullStr = \"not null\";\n" +
                                             $"string voidStr = \"\";");
 
-
                         bool result;
                         result = string.IsNullOrEmpty(nullStr);
                         Console.WriteLine($"nullStr: {result}");
