@@ -1,4 +1,5 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using System.Text;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Lab2
 {
@@ -604,8 +605,8 @@ namespace Lab2
                         string Concate = str1 + str2;
 
                         string original = "text";
-                        string copy = original; // Копирование ссылки (рекомендуемый способ)
-                        string deepCopy = (string)original.Clone(); // Создание дубликата объекта
+                        string copy = original;
+                        string deepCopy = (string)original.Clone();
 
                         string sentence = "C# its a cool language";
                         string[] words = sentence.Split(' ');
@@ -675,6 +676,19 @@ namespace Lab2
                         result = string.IsNullOrEmpty(voidStr);
                         Console.WriteLine($"voidStr: {result}");
 
+                        break;
+
+                    case 'd':
+                        //StringBuilder == System.Text.StringBuilder
+
+                        StringBuilder sb = new StringBuilder("Hello");
+
+                        sb.Append(" World");
+                        Console.WriteLine(sb);
+                        sb.Remove(0, 6);
+                        Console.WriteLine(sb);
+                        sb.Insert(0, "Good Bye ");
+                        Console.WriteLine(sb);
 
                         break;
 
