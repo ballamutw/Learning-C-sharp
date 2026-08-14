@@ -30,7 +30,7 @@ namespace Lab2
                             break;
 
                         case '3':
-                            //Task3();
+                            Task3();
 
                             break;
 
@@ -58,11 +58,11 @@ namespace Lab2
             {
                 try
                 {
-                    char switch_Task1;
+                    char switch_Task;
                     Console.WriteLine("Select a task (a, b, c, d, e, f): \n");
-                    switch_Task1 = Convert.ToChar(Console.ReadLine());
+                    switch_Task = Convert.ToChar(Console.ReadLine());
 
-                    switch (switch_Task1)
+                    switch (switch_Task)
                     {
                         case 'a':
                             string switch_Case_a;
@@ -602,11 +602,11 @@ namespace Lab2
             {
                 try
                 {
-                    char switch_Task2;
+                    char switch_Task;
                     Console.WriteLine("Select a task (a, b, c, d): \n");
-                    switch_Task2 = Convert.ToChar(Console.ReadLine());
+                    switch_Task = Convert.ToChar(Console.ReadLine());
 
-                    switch (switch_Task2)
+                    switch (switch_Task)
                     {
                         case 'a':
                             //System.String
@@ -741,9 +741,36 @@ namespace Lab2
             {
                 try
                 {
+                    char switch_Task;
+                    Console.WriteLine("Select a task (a, b, c, d): \n");
+                    switch_Task = Convert.ToChar(Console.ReadLine());
+
+                    switch (switch_Task)
+                    {
+                        case 'a':
 
 
 
+                            break;
+                        case 'b':
+
+
+
+                            break;
+                        case 'c':
+
+
+
+                            break;
+                        case 'd':
+
+
+
+                            break;
+
+                        default:
+                            break;
+                    }
                 }
                 catch (Exception)
                 {
