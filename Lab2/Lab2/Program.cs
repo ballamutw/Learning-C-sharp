@@ -755,9 +755,23 @@ namespace Lab2
                     {
                         case 'a':
 
+                            int[,] nums2 = { { 0, 1, 2 }, { 3, 4, 5 } };
+                            int rows = nums2.GetUpperBound(0) + 1;
+                            int columns = nums2.Length / rows;
 
+                            Console.WriteLine($"Rows: {rows}, Columns: {columns}");
+
+                            for (int i = 0; i < rows; i++)
+                            {
+                                for (int j = 0; j < columns; j++)
+                                {
+                                    Console.Write($"{nums2[i, j]} ");
+                                }
+                                Console.WriteLine();    
+                            }
 
                             break;
+
                         case 'b':
 
 
