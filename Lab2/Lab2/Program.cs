@@ -53,6 +53,8 @@ namespace Lab2
                 
         static void Task1()
         {
+            Console.WriteLine("Types: \n");
+
             bool taskRunning = true;
             while (taskRunning)
             {
@@ -597,6 +599,8 @@ namespace Lab2
 
         static void Task2()
         {
+            Console.WriteLine("Strings: \n");
+
             bool taskRunning = true;
             while (taskRunning)
             {
@@ -736,6 +740,8 @@ namespace Lab2
 
         static void Task3()
         {
+            Console.WriteLine("Arrays: \n");
+
             bool taskRunning = true;
             while (taskRunning)
             {
@@ -781,14 +787,43 @@ namespace Lab2
 
         static void Task4()
         {
+            Console.WriteLine("Typles: \n");
+
             bool taskRunning = true;
             while (taskRunning)
             {
                 try
                 {
+                    char switch_Task;
+                    Console.WriteLine("Select a task (a, b, c, d): \n");
+                    switch_Task = Convert.ToChar(Console.ReadLine());
+
+                    switch (switch_Task)
+                    {
+                        case 'a':
 
 
 
+                            break;
+                        case 'b':
+
+
+
+                            break;
+                        case 'c':
+
+
+
+                            break;
+                        case 'd':
+
+
+
+                            break;
+
+                        default:
+                            break;
+                    }
                 }
                 catch (Exception)
                 {
