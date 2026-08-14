@@ -774,7 +774,49 @@ namespace Lab2
 
                         case 'b':
 
+                            string[] stringArr = { "123", "32" } ;
 
+                            for (int i = 0; i < stringArr.Length; i++)
+                            {
+                                Console.Write($"{stringArr[i]} ");
+                            }
+
+                            Console.WriteLine($"\nArray lenght: {stringArr.Length}");
+
+                            int elementOfArray;
+
+                            bool flagOfTrueLenght = true;
+                            while (flagOfTrueLenght)
+                            {
+                                Console.WriteLine("Select element of array for update:");
+                                elementOfArray = Convert.ToInt16(Console.ReadLine());
+                                if (stringArr.Length < elementOfArray)
+                                {
+                                    Console.WriteLine("Your position incorrect, try again");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Write value element of array for update:");
+                                    string elementOfValue = Console.ReadLine();
+
+                                    for (int i = 0; i < stringArr.Length; i++)
+                                    {
+                                        if (i == elementOfArray - 1)
+                                        {
+                                            stringArr[i] = elementOfValue;
+                                        }
+                                    }
+
+                                    Console.WriteLine("Array after update:\n");
+                                    for (int i = 0; i < stringArr.Length; i++)
+                                    {
+                                        Console.Write($"{stringArr[i]} ");
+                                    }
+                                    Console.WriteLine();
+
+                                    flagOfTrueLenght = false;
+                                }
+                            }
 
                             break;
                         case 'c':
