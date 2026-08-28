@@ -61,11 +61,15 @@ namespace Lab2
                 try
                 {
                     char switch_Task;
-                    Console.WriteLine("Select a task (a, b, c, d, e, f): \n");
+                    Console.WriteLine("Select a task (a, b, c, d, e, f, 0 - back): \n");
                     switch_Task = Convert.ToChar(Console.ReadLine());
 
                     switch (switch_Task)
                     {
+                        case '0':
+                            ReturnToBackForCase(ref taskRunning);
+                            break;
+
                         case 'a':
                             string switch_Case_a;
 
@@ -607,11 +611,15 @@ namespace Lab2
                 try
                 {
                     char switch_Task;
-                    Console.WriteLine("Select a task (a, b, c, d): \n");
+                    Console.WriteLine("Select a task (a, b, c, d, 0 - back): \n");
                     switch_Task = Convert.ToChar(Console.ReadLine());
 
                     switch (switch_Task)
                     {
+                        case '0':
+                            ReturnToBackForCase(ref taskRunning);
+                            break;
+
                         case 'a':
                             //System.String
                             //string == (Type Handle == 8 byte + Sync Block Index == 8 byte + Length == 4 byte + symbols == (2 * N)byte(s) + \0 == 2 byte)
@@ -748,11 +756,15 @@ namespace Lab2
                 try
                 {
                     char switch_Task;
-                    Console.WriteLine("Select a task (a, b, c, d): \n");
+                    Console.WriteLine("Select a task (a, b, c, d, 0 - back): \n");
                     switch_Task = Convert.ToChar(Console.ReadLine());
 
                     switch (switch_Task)
                     {
+                        case '0':
+                            ReturnToBackForCase(ref taskRunning);
+                            break;
+
                         case 'a':
 
                             int[,] nums2 = { { 0, 1, 2 }, { 3, 4, 5 } };
@@ -852,11 +864,15 @@ namespace Lab2
                 try
                 {
                     char switch_Task;
-                    Console.WriteLine("Select a task (a, b, c, d): \n");
+                    Console.WriteLine("Select a task (a, b, c, d, 0 - back): \n");
                     switch_Task = Convert.ToChar(Console.ReadLine());
 
                     switch (switch_Task)
                     {
+                        case '0':
+                            ReturnToBackForCase(ref taskRunning);
+                            break;
+
                         case 'a':
 
 
@@ -902,6 +918,11 @@ namespace Lab2
             Console.WriteLine("Incorrect value!\n" +
                                 "\"Press any key for continue\"");
             Console.ReadLine();
+        }
+
+        static void ReturnToBackForCase(ref bool taskRunning)
+        {
+            taskRunning = false;
         }
     }
 }
