@@ -831,6 +831,7 @@ namespace Lab2
                             break;
 
                         default:
+                            ReturnToBackForDefault();
                             break;
                     }
                 }
@@ -878,6 +879,7 @@ namespace Lab2
                             break;
 
                         default:
+                            ReturnToBackForDefault();
                             break;
                     }
                 }
