@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Numerics;
+using System.Text;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Lab2
@@ -833,7 +834,31 @@ namespace Lab2
                             break;
                         case 'c':
 
+                            int[][] nums = new int[3][];
+                            nums[0] = new int[4];
+                            nums[1] = new int[3];
+                            nums[2] = new int[2];
 
+                            Console.WriteLine("Write array:\n");
+
+                            for (int i = 0; i < nums.Length; i++)
+                            {
+                                for (int j = 0; j < nums[i].Length; j++)
+                                {
+                                    Console.WriteLine($"Write elements of array: ");
+                                    int ValueElementOfArray = Convert.ToInt32(Console.ReadLine());
+                                    nums[i][j] = ValueElementOfArray;
+                                }
+                            }
+
+                            for (int i = 0; i < nums.Length; i++)
+                            {
+                                for (int j = 0; j < nums[i].Length; j++)
+                                {
+                                    Console.Write($"{nums[i][j]} \t");
+                                }
+                                Console.WriteLine();
+                            }
 
                             break;
                         case 'd':
