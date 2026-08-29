@@ -863,7 +863,17 @@ namespace Lab2
                             break;
                         case 'd':
 
+                            var textMessage = "Hello, World!";
+                            var numbersArray = new[] { "Hel", "20", "30", "40", "50" };
+                            
+                            Console.WriteLine(textMessage);
+                            Console.WriteLine();
 
+                            for (int i = 0; i < numbersArray.Length; i++)
+                            {
+                                Console.Write($"{numbersArray[i]} ");
+                            }
+                            Console.WriteLine();
 
                             break;
 
