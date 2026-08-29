@@ -36,7 +36,7 @@ namespace Lab2
                             break;
 
                         case '4':
-                            //Task4();
+                            Task4();
 
                             break;
 
@@ -880,6 +880,7 @@ namespace Lab2
                         default:
                             ReturnToBackForDefault();
                             break;
+
                     }
                 }
                 catch (Exception)
@@ -910,22 +911,52 @@ namespace Lab2
 
                         case 'a':
 
-
-
+                            (string, string, string, string, int) testTuple = ("boy", "2", "2", "2", 3);
+                            
+                            Console.WriteLine(testTuple);
+                            
                             break;
                         case 'b':
 
+                            (string, string, string, string, int) testTuple2 = ("boy", "2", "2", "2", 3);
 
+                            Console.WriteLine(testTuple2);
+                            Console.WriteLine($"\n{testTuple2.Item1}, {testTuple2.Item3}, {testTuple2.Item4}");
 
                             break;
                         case 'c':
 
+                            (string name, int age) = ("Анна", 22);
+                            Console.WriteLine(name);
+                            Console.WriteLine(age);
 
+                            var client = ("Иван", 5000);
+                            var (nameC, balance) = client;
+
+                            Console.WriteLine($"{nameC} имеет {balance} руб.");
+
+
+                            string city;
+                            double population;
+
+                            (city, population) = ("Минск", 1.9);
+
+                            var point = (X: 10, Y: 20, Z: 30);
+
+                            var (x, _, z) = point;
+
+                            Console.WriteLine($"X: {x}, Z: {z}");
 
                             break;
                         case 'd':
 
+                            var point1 = (X: 5, Y: 10);
+                            var point2 = (5, 10);
+                            var point3 = (X: 10, Y: 5);
 
+                            Console.WriteLine(point1 == point2);
+                            Console.WriteLine(point1 != point3);
+                            Console.WriteLine(point2 != point3);
 
                             break;
 
