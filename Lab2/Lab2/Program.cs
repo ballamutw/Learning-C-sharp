@@ -14,7 +14,7 @@ namespace Lab2
                 try
                 {
                     char switch_Task;
-                    Console.WriteLine("Select a task (1, 2, 3, 4, 5):");
+                    Console.WriteLine("Select a task (1, 2, 3, 4, 5, 6):");
                     switch_Task = Convert.ToChar(Console.ReadLine());
 
                     switch (switch_Task)
@@ -60,6 +60,11 @@ namespace Lab2
 
                             Task5(arr, str, out var MaxMinSummAndFirstLetter);
                             Console.WriteLine($"MaxMinSummAndFirstLetter: {MaxMinSummAndFirstLetter}");
+
+                            break;
+
+                        case '6':
+                            Task6();
 
                             break;
 
@@ -998,6 +1003,56 @@ namespace Lab2
         static void Task5(int[] arr, string str, out (int Max, int Min, int Sum, char FirstLetter) MaxMinSummAndFirstLetter)
         {
             MaxMinSummAndFirstLetter = (arr.Max(), arr.Min(), arr.Sum(), str[0]);
+        }
+
+        static void Task6()
+        {
+            Console.WriteLine("checked/unchecked: \n");
+
+            static void Checked()
+            {
+
+                Console.WriteLine("Checked");
+                uint a = uint.MaxValue;
+
+                checked
+                {
+                    Console.WriteLine(a);
+                }
+            }
+
+            static void Unchecked()
+            {
+                Console.WriteLine("Unchecked");
+                uint a = uint.MaxValue;
+
+                unchecked
+                {
+                    Console.WriteLine(a);
+                }
+            }
+
+            Checked();
+            Unchecked();
+
+            //uint a = uint.MaxValue;
+
+            //unchecked
+            //{
+            //    Console.WriteLine(a + 3);  // output: 2
+            //}
+
+            //try
+            //{
+            //    checked
+            //    {
+            //        Console.WriteLine(a + 3);
+            //    }
+            //}
+            //catch (OverflowException e)
+            //{
+            //    Console.WriteLine(e.Message);  // output: Arithmetic operation resulted in an overflow.
+            //}
         }
 
         static void ReturnToBackForCatch()
