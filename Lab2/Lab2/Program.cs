@@ -14,7 +14,7 @@ namespace Lab2
                 try
                 {
                     char switch_Task;
-                    Console.WriteLine("Select a task (1, 2, 3, 4):");
+                    Console.WriteLine("Select a task (1, 2, 3, 4, 5):");
                     switch_Task = Convert.ToChar(Console.ReadLine());
 
                     switch (switch_Task)
@@ -37,6 +37,29 @@ namespace Lab2
 
                         case '4':
                             Task4();
+
+                            break;
+
+                        case '5':
+                            Console.WriteLine("Functions: \n");
+                            Console.WriteLine("Select the length of the array:");
+                            string str;
+                            int LengthArr = Convert.ToInt32(Console.ReadLine());
+                            int[] arr = new int[LengthArr];
+
+                            Console.WriteLine("Write array a numbers:");
+                            
+                            for (int i = 0; i < LengthArr; i++)
+                            {
+                                Console.WriteLine($"Write {i} element of the array:");
+                                arr[i] = Convert.ToInt32(Console.ReadLine());
+                            }
+
+                            Console.WriteLine("Write string:");
+                            str = Console.ReadLine();
+
+                            Task5(arr, str, out var MaxMinSummAndFirstLetter);
+                            Console.WriteLine($"MaxMinSummAndFirstLetter: {MaxMinSummAndFirstLetter}");
 
                             break;
 
@@ -912,9 +935,9 @@ namespace Lab2
                         case 'a':
 
                             (string, string, string, string, int) testTuple = ("boy", "2", "2", "2", 3);
-                            
+
                             Console.WriteLine(testTuple);
-                            
+
                             break;
                         case 'b':
 
@@ -970,6 +993,11 @@ namespace Lab2
                     ReturnToBackForCatch();
                 }
             }
+        }
+
+        static void Task5(int[] arr, string str, out (int Max, int Min, int Sum, char FirstLetter) MaxMinSummAndFirstLetter)
+        {
+            MaxMinSummAndFirstLetter = (arr.Max(), arr.Min(), arr.Sum(), str[0]);
         }
 
         static void ReturnToBackForCatch()
