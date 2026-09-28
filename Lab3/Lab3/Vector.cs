@@ -1,4 +1,4 @@
-﻿using System.Numerics;
+﻿using System.Runtime.InteropServices;
 
 class Vector
 {
@@ -18,7 +18,6 @@ class Vector
     {
         IntArray = new int[0];
         CountElements = 0;
-        State = "empty vector";
         TotalVectorsCount++;
     }
 
@@ -27,7 +26,6 @@ class Vector
     {
         IntArray = array;
         CountElements = array.Length;
-        State = "Created with array";
         TotalVectorsCount++;
     }
 
@@ -36,7 +34,6 @@ class Vector
     {
         IntArray = new int[size];
         CountElements = size;
-        State = "created and initialized";
 
         for (int i = 0; i < size; i++)
         {
@@ -44,6 +41,13 @@ class Vector
         }
 
         TotalVectorsCount++;
+    }
+
+    //private constructor
+    private Vector(int[] readyArray, int size)
+    {
+        IntArray = readyArray;
+        CountElements = size;
     }
 
     public static void Summ(Vector v1, Vector v2)
@@ -62,15 +66,17 @@ class Vector
             SmallVectorLenght = v1.IntArray.Length;
         }
 
-        Vector newVector = new Vector(MaxVectorLenght);
+        int[] tempArray = new int[MaxVectorLenght];
 
         for (int i = 0; i < MaxVectorLenght; i++)
         {
             int val1 = i < v1.IntArray.Length ? v1[i] : 0;
             int val2 = i < v2.IntArray.Length ? v2[i] : 0;
 
-            newVector[i] = val1 + val2;
+            tempArray[i] = val1 + val2;
         }
+
+        Vector newVector = new Vector(tempArray, MaxVectorLenght);
 
         for (int i = 0; i < MaxVectorLenght; i++)
         {
@@ -94,27 +100,23 @@ class Vector
             SmallVectorLenght = v1.IntArray.Length;
         }
 
-        Vector newVector = new Vector(MaxVectorLenght);
+        int[] tempArray = new int[MaxVectorLenght];
 
         for (int i = 0; i < MaxVectorLenght; i++)
         {
             int val1 = i < v1.IntArray.Length ? v1[i] : 0;
             int val2 = i < v2.IntArray.Length ? v2[i] : 0;
 
-            newVector[i] = val1 * val2;
+            tempArray[i] = val1 * val2;
         }
+
+        Vector newVector = new Vector(tempArray, MaxVectorLenght);
 
         for (int i = 0; i < MaxVectorLenght; i++)
         {
             Console.WriteLine(newVector[i]);
         }
     }
-
-    //private constructor
-    //private Vector(int size)
-    //{
-
-    //}
 
     //indexator
     public int this[int index]
