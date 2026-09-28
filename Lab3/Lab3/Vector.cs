@@ -71,6 +71,39 @@ class Vector
 
             newVector[i] = val1 + val2;
         }
+
+        for (int i = 0; i < MaxVectorLenght; i++)
+        {
+            Console.WriteLine(newVector[i]);
+        }
+    }
+
+    public static void Mult(Vector v1, Vector v2)
+    {
+        int MaxVectorLenght;
+        int SmallVectorLenght;
+
+        if (v1.IntArray.Length >= v2.IntArray.Length)
+        {
+            MaxVectorLenght = v1.IntArray.Length;
+            SmallVectorLenght = v2.IntArray.Length;
+        }
+        else
+        {
+            MaxVectorLenght = v2.IntArray.Length;
+            SmallVectorLenght = v1.IntArray.Length;
+        }
+
+        Vector newVector = new Vector(MaxVectorLenght);
+
+        for (int i = 0; i < MaxVectorLenght; i++)
+        {
+            int val1 = i < v1.IntArray.Length ? v1[i] : 0;
+            int val2 = i < v2.IntArray.Length ? v2[i] : 0;
+
+            newVector[i] = val1 * val2;
+        }
+
         for (int i = 0; i < MaxVectorLenght; i++)
         {
             Console.WriteLine(newVector[i]);

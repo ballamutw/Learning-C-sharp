@@ -18,6 +18,7 @@ namespace Lab3
             Vector v2 = new Vector(new int[] { 1, 2 });
 
             Vector.Summ(v1, v2);
+            Vector.Mult(v1, v2);
 
         }
     }
