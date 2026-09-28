@@ -48,23 +48,31 @@ class Vector
 
     public static void Summ(Vector v1, Vector v2)
     {
-        int vectorLenght;
+        int MaxVectorLenght;
+        int SmallVectorLenght;
+
         if (v1.IntArray.Length >= v2.IntArray.Length)
         {
-            vectorLenght = v1.IntArray.Length;
+            MaxVectorLenght = v1.IntArray.Length;
+            SmallVectorLenght = v2.IntArray.Length;
         }
         else
         {
-            vectorLenght = v2.IntArray.Length;
+            MaxVectorLenght = v2.IntArray.Length;
+            SmallVectorLenght = v1.IntArray.Length;
         }
-        Vector newVector = new Vector(vectorLenght);
 
-        for (int i = 0; i < vectorLenght; i++)
+        Vector newVector = new Vector(MaxVectorLenght);
+
+        for (int i = 0; i < MaxVectorLenght; i++)
         {
+            int val1 = i < v1.IntArray.Length ? v1[i] : 0;
+            int val2 = i < v2.IntArray.Length ? v2[i] : 0;
 
-            // нужно решить проблему с выходом за пределы массива и присвоением 0 через индексатор
-            newVector[i] = v1[i] + v2[i];
-
+            newVector[i] = val1 + val2;
+        }
+        for (int i = 0; i < MaxVectorLenght; i++)
+        {
             Console.WriteLine(newVector[i]);
         }
     }
@@ -83,11 +91,13 @@ class Vector
             if (IntArray != null && index >= 0 && index < CountElements)
             {
                 State = "OK";
+                Console.WriteLine(State);
                 return IntArray[index];
             }
             else
             {
                 State = "Error: Index out of range";
+                Console.WriteLine(State);
                 return 0;
             }
         }
@@ -97,10 +107,12 @@ class Vector
             {
                 IntArray[index] = value;
                 State = "OK";
+                Console.WriteLine(State);
             }
             else
             {
                 State = "Error: Index out of range!";
+                Console.WriteLine(State);
             }
         }
     }
