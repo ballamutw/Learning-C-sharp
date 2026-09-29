@@ -48,6 +48,7 @@ class Vector
     {
         IntArray = readyArray;
         CountElements = size;
+        TotalVectorsCount++;
     }
 
     public static void Summ(Vector v1, Vector v2)
