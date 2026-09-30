@@ -20,6 +20,7 @@ namespace Lab3
             Vector.Summ(v1, v2);
             Vector.Mult(v1, v2);
 
+
         }
     }
 }

@@ -45,16 +45,24 @@ class Vector
     //constructor with default params
     public Vector(int size, int initialValue = 0)
     {
-        IntArray = new int[size];
+        if (size <= MaxVectorSize)
+        {
+            IntArray = new int[size];
+            State = "Constructor with default params - OK";
+        }
+        else 
+        {
+            IntArray = new int[MaxVectorSize];
+            State = "Constructor with default params - Not OK (Out of range, Clamped)";
+        }
 
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < IntArray.Length; i++)
         {
             IntArray[i] = initialValue;
         }
 
         TotalVectorsCount++;
         Id = TotalVectorsCount.GetHashCode();
-        State = "Constructor with default params - OK";
     }
 
     //private constructor
