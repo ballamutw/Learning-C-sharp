@@ -4,6 +4,7 @@ class Vector
 {
     public static int TotalVectorsCount;
     public static string State;
+    public readonly int Id;
     public int[] IntArray;
     public int CountElements;
     
@@ -18,7 +19,6 @@ class Vector
     public Vector()
     {
         IntArray = new int[0];
-        CountElements = 0;
         TotalVectorsCount++;
     }
 
@@ -34,7 +34,6 @@ class Vector
     public Vector(int size, int initialValue = 0)
     {
         IntArray = new int[size];
-        CountElements = size;
 
         for (int i = 0; i < size; i++)
         {
@@ -48,7 +47,6 @@ class Vector
     private Vector(int[] readyArray, int size)
     {
         IntArray = readyArray;
-        CountElements = size;
         TotalVectorsCount++;
     }
 
