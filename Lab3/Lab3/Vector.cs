@@ -3,13 +3,14 @@
 class Vector
 {
     public static int TotalVectorsCount;
+    public static string State;
     public int[] IntArray;
     public int CountElements;
-    public string State;
     
     //static constructor
     static Vector()
     {
+        State = "OK";
         TotalVectorsCount = 0;
     }
 
@@ -126,13 +127,13 @@ class Vector
         {
             if (IntArray != null && index >= 0 && index < CountElements)
             {
-                State = "OK";
+                State = "Get OK";
                 Console.WriteLine(State);
                 return IntArray[index];
             }
             else
             {
-                State = "Error: Index out of range";
+                State = "Get Error: Index out of range";
                 Console.WriteLine(State);
                 return 0;
             }
@@ -142,12 +143,12 @@ class Vector
             if (IntArray != null && index >= 0 && index < CountElements)
             {
                 IntArray[index] = value;
-                State = "OK";
+                State = "Set OK";
                 Console.WriteLine(State);
             }
             else
             {
-                State = "Error: Index out of range!";
+                State = "Set Error: Index out of range!";
                 Console.WriteLine(State);
             }
         }
