@@ -27,7 +27,16 @@ class Vector
     //constructor with params
     public Vector(int[] array)
     {
-        IntArray = array;
+        if (array.Length > MaxVectorSize)
+        {
+            IntArray = new int[MaxVectorSize];
+            Array.Copy(array, IntArray, MaxVectorSize);
+        }
+        else
+        {
+            IntArray = array;
+        }
+
         TotalVectorsCount++;
         Id = TotalVectorsCount.GetHashCode();
         State = "Constructor with params - OK";
