@@ -11,8 +11,8 @@ class Vector
     //static constructor
     static Vector()
     {
-        State = "OK";
         TotalVectorsCount = 0;
+        State = "OK";
     }
 
     //constructor no params
@@ -21,6 +21,7 @@ class Vector
         IntArray = new int[0];
         TotalVectorsCount++;
         Id = TotalVectorsCount.GetHashCode();
+        State = "No params constructor - OK";
     }
 
     //constructor with params
@@ -29,6 +30,7 @@ class Vector
         IntArray = array;
         TotalVectorsCount++;
         Id = TotalVectorsCount.GetHashCode();
+        State = "Constructor with params - OK";
     }
 
     //constructor with default params
@@ -43,6 +45,7 @@ class Vector
 
         TotalVectorsCount++;
         Id = TotalVectorsCount.GetHashCode();
+        State = "Constructor with default params - OK";
     }
 
     //private constructor
@@ -51,6 +54,7 @@ class Vector
         IntArray = readyArray;
         TotalVectorsCount++;
         Id = TotalVectorsCount.GetHashCode();
+        State = "Private constructor - OK";
     }
 
     public static void Summ(Vector v1, Vector v2)
