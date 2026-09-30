@@ -5,8 +5,8 @@ class Vector
     public static int TotalVectorsCount;
     public static string State;
     public readonly int Id;
+    public const int MaxVectorSize = 10000;
     public int[] IntArray;
-    public int CountElements;
     
     //static constructor
     static Vector()
@@ -27,7 +27,6 @@ class Vector
     public Vector(int[] array)
     {
         IntArray = array;
-        CountElements = array.Length;
         TotalVectorsCount++;
         Id = TotalVectorsCount.GetHashCode();
     }
@@ -127,7 +126,7 @@ class Vector
     {
         get 
         {
-            if (IntArray != null && index >= 0 && index < CountElements)
+            if (IntArray != null && index >= 0 && index < IntArray.Length)
             {
                 State = "Get OK";
                 Console.WriteLine(State);
@@ -142,7 +141,7 @@ class Vector
         }
         set 
         {
-            if (IntArray != null && index >= 0 && index < CountElements)
+            if (IntArray != null && index >= 0 && index < IntArray.Length)
             {
                 IntArray[index] = value;
                 State = "Set OK";
