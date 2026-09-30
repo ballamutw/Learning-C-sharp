@@ -20,6 +20,7 @@ class Vector
     {
         IntArray = new int[0];
         TotalVectorsCount++;
+        Id = TotalVectorsCount.GetHashCode();
     }
 
     //constructor with params
@@ -28,6 +29,7 @@ class Vector
         IntArray = array;
         CountElements = array.Length;
         TotalVectorsCount++;
+        Id = TotalVectorsCount.GetHashCode();
     }
 
     //constructor with default params
@@ -41,6 +43,7 @@ class Vector
         }
 
         TotalVectorsCount++;
+        Id = TotalVectorsCount.GetHashCode();
     }
 
     //private constructor
@@ -48,6 +51,7 @@ class Vector
     {
         IntArray = readyArray;
         TotalVectorsCount++;
+        Id = TotalVectorsCount.GetHashCode();
     }
 
     public static void Summ(Vector v1, Vector v2)
