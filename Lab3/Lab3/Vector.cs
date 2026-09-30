@@ -1,27 +1,45 @@
-﻿using System.Runtime.InteropServices;
-
-class Vector
+﻿class Vector
 {
-    public static int TotalVectorsCount;
-    public static string State;
-    public readonly int Id;
+    private static int _totalVectorsCount = 0;
+    private static string _state = "OK";
+    private readonly int _id;
+    private int[] _intArray;
     public const int MaxVectorSize = 10000;
-    public int[] IntArray;
-    
+
+    public static int TotalVectorsCount
+    {
+        get { return _totalVectorsCount; }
+        private set { _totalVectorsCount = value; }
+    }
+    public static string State
+    {
+        get { return _state; }
+        set { _state = value; }
+    }
+    public int Id
+    {
+        get { return _id; }
+    }
+    public int[] IntArray
+    {
+        get { return _intArray; }
+        set { _intArray = value; }
+    }
+
     //static constructor
     static Vector()
     {
-        TotalVectorsCount = 0;
-        State = "OK";
+        _totalVectorsCount = 0;
+        _state = "OK";
     }
 
     //constructor no params
     public Vector()
     {
-        IntArray = new int[0];
-        TotalVectorsCount++;
-        Id = TotalVectorsCount.GetHashCode();
-        State = "No params constructor - OK";
+        _intArray = new int[0];
+        _totalVectorsCount++;
+        _id = _totalVectorsCount.GetHashCode();
+        _state = "No params constructor - OK";
     }
 
     //constructor with params
@@ -29,17 +47,17 @@ class Vector
     {
         if (array.Length > MaxVectorSize)
         {
-            IntArray = new int[MaxVectorSize];
-            Array.Copy(array, IntArray, MaxVectorSize);
+            _intArray = new int[MaxVectorSize];
+            Array.Copy(array, _intArray, MaxVectorSize);
         }
         else
         {
-            IntArray = array;
+            _intArray = array;
         }
 
-        TotalVectorsCount++;
-        Id = TotalVectorsCount.GetHashCode();
-        State = "Constructor with params - OK";
+        _totalVectorsCount++;
+        _id = _totalVectorsCount.GetHashCode();
+        _state = "Constructor with params - OK";
     }
 
     //constructor with default params
@@ -47,31 +65,31 @@ class Vector
     {
         if (size <= MaxVectorSize)
         {
-            IntArray = new int[size];
-            State = "Constructor with default params - OK";
+            _intArray = new int[size];
+            _state = "Constructor with default params - OK";
         }
         else 
         {
-            IntArray = new int[MaxVectorSize];
-            State = "Constructor with default params - Not OK (Out of range, Clamped)";
+            _intArray = new int[MaxVectorSize];
+            _state = "Constructor with default params - Not OK (Out of range, Clamped)";
         }
 
-        for (int i = 0; i < IntArray.Length; i++)
+        for (int i = 0; i < _intArray.Length; i++)
         {
-            IntArray[i] = initialValue;
+            _intArray[i] = initialValue;
         }
 
-        TotalVectorsCount++;
-        Id = TotalVectorsCount.GetHashCode();
+        _totalVectorsCount++;
+        _id = _totalVectorsCount.GetHashCode();
     }
 
     //private constructor
     private Vector(int[] readyArray, int size)
     {
-        IntArray = readyArray;
-        TotalVectorsCount++;
-        Id = TotalVectorsCount.GetHashCode();
-        State = "Private constructor - OK";
+        _intArray = readyArray;
+        _totalVectorsCount++;
+        _id = _totalVectorsCount.GetHashCode();
+        _state = "Private constructor - OK";
     }
 
     public static void Summ(Vector v1, Vector v2)
@@ -79,23 +97,23 @@ class Vector
         int MaxVectorLenght;
         int SmallVectorLenght;
 
-        if (v1.IntArray.Length >= v2.IntArray.Length)
+        if (v1._intArray.Length >= v2._intArray.Length)
         {
-            MaxVectorLenght = v1.IntArray.Length;
-            SmallVectorLenght = v2.IntArray.Length;
+            MaxVectorLenght = v1._intArray.Length;
+            SmallVectorLenght = v2._intArray.Length;
         }
         else
         {
-            MaxVectorLenght = v2.IntArray.Length;
-            SmallVectorLenght = v1.IntArray.Length;
+            MaxVectorLenght = v2._intArray.Length;
+            SmallVectorLenght = v1._intArray.Length;
         }
 
         int[] tempArray = new int[MaxVectorLenght];
 
         for (int i = 0; i < MaxVectorLenght; i++)
         {
-            int val1 = i < v1.IntArray.Length ? v1[i] : 0;
-            int val2 = i < v2.IntArray.Length ? v2[i] : 0;
+            int val1 = i < v1._intArray.Length ? v1[i] : 0;
+            int val2 = i < v2._intArray.Length ? v2[i] : 0;
 
             tempArray[i] = val1 + val2;
         }
@@ -113,23 +131,23 @@ class Vector
         int MaxVectorLenght;
         int SmallVectorLenght;
 
-        if (v1.IntArray.Length >= v2.IntArray.Length)
+        if (v1._intArray.Length >= v2._intArray.Length)
         {
-            MaxVectorLenght = v1.IntArray.Length;
-            SmallVectorLenght = v2.IntArray.Length;
+            MaxVectorLenght = v1._intArray.Length;
+            SmallVectorLenght = v2._intArray.Length;
         }
         else
         {
-            MaxVectorLenght = v2.IntArray.Length;
-            SmallVectorLenght = v1.IntArray.Length;
+            MaxVectorLenght = v2._intArray.Length;
+            SmallVectorLenght = v1._intArray.Length;
         }
 
         int[] tempArray = new int[MaxVectorLenght];
 
         for (int i = 0; i < MaxVectorLenght; i++)
         {
-            int val1 = i < v1.IntArray.Length ? v1[i] : 0;
-            int val2 = i < v2.IntArray.Length ? v2[i] : 0;
+            int val1 = i < v1._intArray.Length ? v1[i] : 0;
+            int val2 = i < v2._intArray.Length ? v2[i] : 0;
 
             tempArray[i] = val1 * val2;
         }
@@ -147,31 +165,31 @@ class Vector
     {
         get 
         {
-            if (IntArray != null && index >= 0 && index < IntArray.Length)
+            if (_intArray != null && index >= 0 && index < _intArray.Length)
             {
-                State = "Get OK";
-                Console.WriteLine(State);
-                return IntArray[index];
+                _state = "Get OK";
+                Console.WriteLine(_state);
+                return _intArray[index];
             }
             else
             {
-                State = "Get Error: Index out of range";
-                Console.WriteLine(State);
+                _state = "Get Error: Index out of range";
+                Console.WriteLine(_state);
                 return 0;
             }
         }
         set 
         {
-            if (IntArray != null && index >= 0 && index < IntArray.Length)
+            if (_intArray != null && index >= 0 && index < _intArray.Length)
             {
-                IntArray[index] = value;
-                State = "Set OK";
-                Console.WriteLine(State);
+                _intArray[index] = value;
+                _state = "Set OK";
+                Console.WriteLine(_state);
             }
             else
             {
-                State = "Set Error: Index out of range!";
-                Console.WriteLine(State);
+                _state = "Set Error: Index out of range!";
+                Console.WriteLine(_state);
             }
         }
     }
