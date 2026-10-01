@@ -31,6 +31,8 @@
     {
         _totalVectorsCount = 0;
         _state = "OK";
+        Console.WriteLine(_state);
+        Console.WriteLine($"_totalVectorsCount: {_totalVectorsCount}");
     }
 
     //constructor no params
@@ -40,6 +42,8 @@
         _totalVectorsCount++;
         _id = _totalVectorsCount.GetHashCode();
         _state = "No params constructor - OK";
+        Console.WriteLine(_state);
+        Console.WriteLine($"_totalVectorsCount: {_totalVectorsCount}");
     }
 
     //constructor with params
@@ -58,6 +62,8 @@
         _totalVectorsCount++;
         _id = _totalVectorsCount.GetHashCode();
         _state = "Constructor with params - OK";
+        Console.WriteLine(_state);
+        Console.WriteLine($"_totalVectorsCount: {_totalVectorsCount}");
     }
 
     //constructor with default params
@@ -67,11 +73,13 @@
         {
             _intArray = new int[size];
             _state = "Constructor with default params - OK";
+            Console.WriteLine(_state);
         }
         else 
         {
             _intArray = new int[MaxVectorSize];
             _state = "Constructor with default params - Not OK (Out of range, Clamped)";
+            Console.WriteLine(_state);
         }
 
         for (int i = 0; i < _intArray.Length; i++)
@@ -81,15 +89,18 @@
 
         _totalVectorsCount++;
         _id = _totalVectorsCount.GetHashCode();
+        Console.WriteLine($"_totalVectorsCount: {_totalVectorsCount}");
     }
 
     //private constructor
-    private Vector(int[] readyArray, int size)
+    private Vector(int[] Array, bool IsPrivate)
     {
-        _intArray = readyArray;
+        _intArray = Array;
         _totalVectorsCount++;
         _id = _totalVectorsCount.GetHashCode();
         _state = "Private constructor - OK";
+        Console.WriteLine(_state);
+        Console.WriteLine($"_totalVectorsCount: {_totalVectorsCount}");
     }
 
     public static void Summ(Vector v1, Vector v2)
@@ -118,9 +129,26 @@
             tempArray[i] = val1 + val2;
         }
 
-        Vector newVector = new Vector(tempArray, MaxVectorLenght);
+        Vector newVector = new Vector(tempArray, true);
 
         for (int i = 0; i < MaxVectorLenght; i++)
+        {
+            Console.WriteLine(newVector[i]);
+        }
+    }
+
+    public static void Summ(Vector v1, int value)
+    {
+        int[] tempArray = new int[v1._intArray.Length];
+
+        for (int i = 0; i < tempArray.Length; i++)
+        {
+            tempArray[i] = v1[i] + value;
+        }
+
+        Vector newVector = new Vector(tempArray, true);
+
+        for (int i = 0; i < tempArray.Length; i++)
         {
             Console.WriteLine(newVector[i]);
         }
@@ -152,9 +180,26 @@
             tempArray[i] = val1 * val2;
         }
 
-        Vector newVector = new Vector(tempArray, MaxVectorLenght);
+        Vector newVector = new Vector(tempArray, true);
 
         for (int i = 0; i < MaxVectorLenght; i++)
+        {
+            Console.WriteLine(newVector[i]);
+        }
+    }
+
+    public static void Mult(Vector v1, int value)
+    {
+        int[] tempArray = new int[v1._intArray.Length];
+
+        for (int i = 0; i < tempArray.Length; i++)
+        {
+            tempArray[i] = v1[i] * value;
+        }
+
+        Vector newVector = new Vector(tempArray, true);
+
+        for (int i = 0; i < tempArray.Length; i++)
         {
             Console.WriteLine(newVector[i]);
         }

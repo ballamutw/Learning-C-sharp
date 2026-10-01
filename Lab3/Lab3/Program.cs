@@ -18,7 +18,29 @@ namespace Lab3
             Vector v2 = new Vector(new int[] { 1, 2 });
 
             Vector.Summ(v1, v2);
+            Console.WriteLine("_________________________________");
+            Console.WriteLine(v1[0]);
+            Console.WriteLine(v1[1]);
+            Console.WriteLine(v1[2]);
+            Console.WriteLine("_________________________________");
+            Vector.Summ(v1, 2);
+            Console.WriteLine("_________________________________");
+            Console.WriteLine(v1[0]);
+            Console.WriteLine(v1[1]);
+            Console.WriteLine(v1[2]);
+            Console.WriteLine("_________________________________");
             Vector.Mult(v1, v2);
+            Console.WriteLine("_________________________________");
+            Console.WriteLine(v1[0]);
+            Console.WriteLine(v1[1]);
+            Console.WriteLine(v1[2]);
+            Console.WriteLine("_________________________________");
+            Vector.Mult(v1, 2);
+            Console.WriteLine("_________________________________");
+            Console.WriteLine(v1[0]);
+            Console.WriteLine(v1[1]);
+            Console.WriteLine(v1[2]);
+            Console.WriteLine("_________________________________");
 
 
         }
