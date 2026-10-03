@@ -205,6 +205,43 @@
         }
     }
 
+    //TryTake
+    public static void TryTake(ref Vector v, int element, out int outElement)
+    {
+        outElement = 0;
+
+        if (v._intArray == null || v._intArray.Length < element || element < 0)
+        {
+            _state = "TryTake Error: out of range";
+        }
+
+        int[] tempArray = new int[v._intArray.Length - 1];
+
+
+        for (int i = 0; i < tempArray.Length; i++)
+        {
+            if (i == element)
+            {
+                outElement = v._intArray[i];
+            }
+            if (i < element)
+            {
+                tempArray[i] = v._intArray[i];
+            }
+            else
+            {
+                tempArray[i] = v._intArray[i + 1];
+            }
+            
+            Console.WriteLine(tempArray[i]);
+        }
+
+        v = new Vector(tempArray, true);
+
+        _state = "TryTake - OK";
+        Console.WriteLine(_state);
+    }
+
     //indexator
     public int this[int index]
     {
