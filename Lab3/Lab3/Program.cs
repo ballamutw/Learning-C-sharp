@@ -23,6 +23,7 @@ namespace Lab3
             Vector v = new Vector(new int[] { 0, 1, 2, 3, 4, 5, 6, 7 });
 
             Vector.TakeElement(ref v, 5, out int outElement);
+            Vector.PrintClassInfo();
         }
     }
 }

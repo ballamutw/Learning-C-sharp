@@ -206,13 +206,14 @@
     }
 
     //TryTake
-    public static void TryTake(ref Vector v, int element, out int outElement)
+    public static void TakeElement(ref Vector v, int element, out int outElement)
     {
         outElement = 0;
 
         if (v._intArray == null || v._intArray.Length < element || element < 0)
         {
-            _state = "TryTake Error: out of range";
+            _state = "TryTake Error: null or out of range";
+            return;
         }
 
         int[] tempArray = new int[v._intArray.Length - 1];
@@ -240,6 +241,15 @@
 
         _state = "TryTake - OK";
         Console.WriteLine(_state);
+    }
+
+    public static void PrintClassInfo()
+    {
+        Console.WriteLine($"______________________________________________\n" +
+                          $"Info about class Vector\n" +
+                          $"Total vectors count: {_totalVectorsCount}\n" +
+                          $"Сurrent state of the class: {_state}\n" +
+                          $"______________________________________________");
     }
 
     //indexator
