@@ -105,27 +105,14 @@
 
     public static void Summ(Vector v1, Vector v2)
     {
-        int MaxVectorLenght;
-        int SmallVectorLenght;
-
-        if (v1._intArray.Length >= v2._intArray.Length)
-        {
-            MaxVectorLenght = v1._intArray.Length;
-            SmallVectorLenght = v2._intArray.Length;
-        }
-        else
-        {
-            MaxVectorLenght = v2._intArray.Length;
-            SmallVectorLenght = v1._intArray.Length;
-        }
-
+        int MaxVectorLenght = (v1._intArray.Length >= v2._intArray.Length) ? v1._intArray.Length : v2._intArray.Length;
+        int SmallVectorLenght = (v1._intArray.Length < v2._intArray.Length) ? v2._intArray.Length : v1._intArray.Length;
         int[] tempArray = new int[MaxVectorLenght];
 
         for (int i = 0; i < MaxVectorLenght; i++)
         {
             int val1 = i < v1._intArray.Length ? v1[i] : 0;
             int val2 = i < v2._intArray.Length ? v2[i] : 0;
-
             tempArray[i] = val1 + val2;
         }
 
@@ -156,27 +143,14 @@
 
     public static void Mult(Vector v1, Vector v2)
     {
-        int MaxVectorLenght;
-        int SmallVectorLenght;
-
-        if (v1._intArray.Length >= v2._intArray.Length)
-        {
-            MaxVectorLenght = v1._intArray.Length;
-            SmallVectorLenght = v2._intArray.Length;
-        }
-        else
-        {
-            MaxVectorLenght = v2._intArray.Length;
-            SmallVectorLenght = v1._intArray.Length;
-        }
-
+        int MaxVectorLenght = (v1._intArray.Length >= v2._intArray.Length) ? v1._intArray.Length : v2._intArray.Length;
+        int SmallVectorLenght = (v1._intArray.Length < v2._intArray.Length) ? v2._intArray.Length : v1._intArray.Length;
         int[] tempArray = new int[MaxVectorLenght];
 
         for (int i = 0; i < MaxVectorLenght; i++)
         {
             int val1 = i < v1._intArray.Length ? v1[i] : 0;
             int val2 = i < v2._intArray.Length ? v2[i] : 0;
-
             tempArray[i] = val1 * val2;
         }
 
