@@ -210,30 +210,20 @@
     {
         outElement = 0;
 
-        if (v._intArray == null || v._intArray.Length < element || element < 0)
+        if (v._intArray == null || v._intArray.Length <= element || element < 0)
         {
             _state = "TryTake Error: null or out of range";
             return;
         }
+
+        outElement = v._intArray[element];
 
         int[] tempArray = new int[v._intArray.Length - 1];
 
 
         for (int i = 0; i < tempArray.Length; i++)
         {
-            if (i == element)
-            {
-                outElement = v._intArray[i];
-            }
-            if (i < element)
-            {
-                tempArray[i] = v._intArray[i];
-            }
-            else
-            {
-                tempArray[i] = v._intArray[i + 1];
-            }
-            
+            tempArray[i] = (i < element) ? v._intArray[i] : v._intArray[i + 1];
             Console.WriteLine(tempArray[i]);
         }
 
